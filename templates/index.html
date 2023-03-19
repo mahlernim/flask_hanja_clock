@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="{{ reload_interval }}; url=/">
+    <title>Random Hanja</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        font-size: 15vw;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+	  table {margin-top:2vw}
+	  a {color:#ACF; text-decoration:none;}
+	  a:hover {text-decoration:underline;}
+	  .nr {white-space:nowrap;}
+	  .large { font-size: 25vw; }
+      .small { font-size: 5vw; }
+	  .smaller { font-size: 3vw; }
+	  .smallest { font-size: 2vw; }
+	  .al { text-align: left; }	  
+    </style>
+  </head>
+  <body>
+	<div class="small">{{ date }}</div>
+    <div class="large">{{ time }}</div>
+    <div>{{ hanja }}</div>
+    <div class="small">{{ huneum }}</div>
+    <div class="smaller">총: {{ strokes }}획, 부수: {{ radical }}, 읽기: {{ read_level }}, 쓰기: {{ write_level }}</div>
+	<table align="center">
+	{% for row in matching_words %}
+	<tr>
+	<td class="smaller nr">{{ row['word']|safe }}</td>
+	<td class="smallest al">{{ row['meaning'] }}</td>
+	</tr>
+	{% endfor %}
+	</table>
+  </body>
+</html>
