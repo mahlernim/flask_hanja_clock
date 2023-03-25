@@ -4,10 +4,10 @@ import random
 import datetime
 from urllib import parse
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/<user_hanja>')
-@app.route('/')
+@application.route('/<user_hanja>')
+@application.route('/')
 def index(user_hanja=""):
     # Load hanja500.csv
     df = pd.read_csv('hanja500.csv')
@@ -57,4 +57,4 @@ def index(user_hanja=""):
         read_level=read_level, write_level=write_level, reload_interval=time_until_next_minute, matching_words=matching_words)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run()

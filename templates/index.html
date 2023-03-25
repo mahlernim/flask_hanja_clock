@@ -7,19 +7,20 @@
       body {
         background-color: black;
         color: white;
-        font-size: 15vw;
+        font-size: 25vw;
         text-align: center;
         margin: 0;
         padding: 0;
       }
-	  table {margin-top:2vw}
+	  table {margin-top:1vw}
+	  td {padding-top:1vw}
 	  a {color:#ACF; text-decoration:none;}
 	  a:hover {text-decoration:underline;}
 	  .nr {white-space:nowrap;}
-	  .large { font-size: 25vw; }
-      .small { font-size: 5vw; }
-	  .smaller { font-size: 3vw; }
-	  .smallest { font-size: 2vw; }
+	  .large { font-size: 30vw; margin:0;}
+          .small { font-size: 8vw; }
+	  .smaller { font-size: 6vw; }
+	  .smallest { font-size: 4vw; }
 	  .al { text-align: left; }	  
     </style>
   </head>
@@ -28,7 +29,7 @@
     <div class="large">{{ time }}</div>
     <div>{{ hanja }}</div>
     <div class="small">{{ huneum }}</div>
-    <div class="smaller">총: {{ strokes }}획, 부수: {{ radical }}, 읽기: {{ read_level }}, 쓰기: {{ write_level }}</div>
+    <div class="smaller">총: {{ strokes }}획, 부수: {{ radical }}<br>읽기: {{ read_level }}, 쓰기: {{ write_level }}</div>
 	<table align="center">
 	{% for row in matching_words %}
 	<tr>
